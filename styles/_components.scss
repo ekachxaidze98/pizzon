@@ -1,0 +1,30 @@
+.title {
+    padding-bottom: 35px;
+    h5 {
+        font-size: 30px;
+        color: $primary-color;
+        font-family: 'Pacifico', cursive;
+    }
+    h2 {
+        font-size: 70px;
+        color: #1D1D1D;
+    }
+}
+// 
+.button {
+    text-decoration: none;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    color: $white;
+    font-weight: 700;
+    padding: 17px 41px;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: all 0.35s ease-in;
+    &:hover {
+        background-color: transparent;
+        color: $primary-color;
+    }
+}

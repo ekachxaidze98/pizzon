@@ -59,3 +59,32 @@
         }
     }
 }
+// title-left
+.title-container {
+    h5 {
+        font-size: 30px;
+        color: $primary-color;
+        font-family: 'Pacifico', cursive;
+
+        @media only screen and (max-width: 970px) {
+            font-size: 25px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    h2 {
+        font-size: 70px;
+        color: #1D1D1D;
+
+        @media only screen and (max-width: 970px) {
+            font-size: 50px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 30px;
+        }
+    }
+}

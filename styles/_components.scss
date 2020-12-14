@@ -1,13 +1,26 @@
 .title {
+    @include center();
     padding-bottom: 35px;
     h5 {
         font-size: 30px;
         color: $primary-color;
         font-family: 'Pacifico', cursive;
+        @media only screen and (max-width: 970px) {
+            font-size: 25px;
+         }
+         @media only screen and (max-width: 768px) {
+            font-size: 20px;
+         }
     }
     h2 {
         font-size: 70px;
         color: #1D1D1D;
+        @media only screen and (max-width: 970px) {
+            font-size: 50px;
+         }
+         @media only screen and (max-width: 768px) {
+            font-size: 30px;
+         }
     }
 }
 // 
@@ -26,5 +39,23 @@
     &:hover {
         background-color: transparent;
         color: $primary-color;
+    }
+}
+// card of 4
+.cards {
+    @include align-cards();
+    padding-top: 50px;
+
+    .card {
+        width: 22%;
+        @include center();
+
+        @media only screen and (max-width: 970px) {
+            width: 25%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 50%;
+        }
     }
 }

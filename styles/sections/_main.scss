@@ -1,5 +1,6 @@
 .header-section {
-    background-image: url(../img/bc.png);
+    background-color: $dark-light;
+    background-image: url("../img/chef-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -42,7 +43,7 @@
                         color: $secondary-color;
                     }
 
-                    .button {
+                    .menu-button {
                         font-size: 16px;
                         color: $white;
                         text-decoration: none;
@@ -199,20 +200,35 @@
     padding: 70px;
     position: relative;
 
-    .splash-top {
+    &::before {
+        content: "";
+        background-image: url("../img/order-top.png");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100px;
         position: absolute;
-        max-width: 100%;
+        display: inline-block;
+        top: -100px;
         left: 0;
-        top: -20%;
-
-    }
-
-    .splash-bottom {
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        background-image: url("../img/order-bottom.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 150px;
         position: absolute;
-        max-width: 100%;
+        display: inline-block;
+        bottom: -100px;
         left: 0;
-        bottom: -20%;
-    }
+        z-index: 1;
+      }
+
 
     .items {
         width: 100%;
@@ -239,10 +255,13 @@
                 margin: 10px 0;
             }
 
-            img {
+            svg {
                 width: 90px;
                 height: 90px;
                 transition: fill 0.35s ease-in;
+                &:hover {
+                    fill: $white;
+                }
 
                 @media only screen and (max-width: 768px) {
                     width: 70px;
@@ -329,13 +348,34 @@
     background-color: #121619;
     padding: 120px 0;
     position: relative;
-
-    // .whitesplash-bottom {
-    //     position: absolute;
-    //     max-width: 100%;
-    //     left: 0;
-    //     bottom: -20%;
-    // }
+    &::before {
+        content: "";
+        background-image: url("../img/customer-top-bg.png");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        display: inline-block;
+        top: -66px;
+        left: 0;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        background-image: url("../img/customer-bottom-bg.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
     .title {
         h2 {
             color: $white
@@ -466,11 +506,8 @@
 
             @media only screen and (max-width: 768px) {
                 width: 90%;
-                text-align: center;
+                @include center();
             }
-
-            
-
             p {
                 @include mainText();
                 // padding-right: 110px;
@@ -478,26 +515,48 @@
 
             .call-info {
                 display: flex;
+                align-items: center;
                 background: $dark;
                 border: 10px solid $primary-color;
-                display: inline-block;
-                padding: 15px 10px 15px 65px;
+                padding: 10px 0;
                 margin-top: 30px;
                 transition: all 0.35s ease-in;
+                width: 85%;
 
                 @media only screen and (max-width: 970px) {
                     padding: 10px 10px 10px 40px;
                 }
+                @media only screen and (max-width: 768px) {
+                    width: 50%;
+                }
 
-                // img {
-                //     fill: red;
-                //     @media only screen and (max-width: 970px) {
-                //         width: 46px;
-                //         height: 60px;
-                //     }
-                // }
+                .caller-icon {
+                    background-image: url('../img//online-call.png');
+                    background-repeat: no-repeat;
+                    width: 46px;
+                    height: 60px;
+                    padding: 0 10px;
+                }
+                &:hover {
+                    background-color: $white;
 
-                span {
+                    P {
+                        color: $dark;
+                    }
+                    .caller-icon {
+                        background-image: url("../img/online-call-hover.png");
+                    }
+                }
+
+                img {
+                   
+                    @media only screen and (max-width: 970px) {
+                        width: 46px;
+                        height: 60px;
+                    }
+                }
+
+                P {
                     font-size: 38px;
                     font-weight: 700;
                     color: $white;
@@ -507,13 +566,7 @@
                     }
                 }
 
-                &:hover {
-                    background-color: $white;
-
-                    span {
-                        color: $dark;
-                    }
-                }
+           
             }
         }
 
@@ -557,16 +610,18 @@
                         padding: 0 15px;
                         margin: 8px 0;
                     }
-
-                    // .button {
-                    //     color: $white;
-                    //     background-color: $dark;
-                    //     &:hover {
-                    //         border: $dark;
-                    //         color: $dark;
-                    //     }
-                    // }
                 }
+                .btn-black {
+                        color: $white;
+                        background-color: $dark;
+                        transition: all 0.35s ease-in;
+                        border: 1px solid $dark;
+                        &:hover {
+                            
+                            color: $dark;
+                            background-color: $white;
+                        }
+                    }
             }
         }
     }
@@ -574,13 +629,41 @@
 
 // chef
 .chef-section {
-    background-image: url(../img/bc.png);
+    background-color: $dark-light;
+    background-image: url("../img/chef-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 155px;
     position: relative;
-
+    &::before {
+        content: "";
+        background-image: url("../img/chef.png");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 160px;
+        position: absolute;
+        display: inline-block;
+        top: -66px;
+        left: 0;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        background-image: url("../img/chef-bottom.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
     .title {
         h2 {
             color: $white;
@@ -656,12 +739,17 @@
             width: 31%;
 
             .news-img {
+                height: 280px;
                 position: relative;
                 transition: all 0.35s ease-in;
+                @media only screen and (max-width: 768px) {
+                    height: 500px;
+                }
 
                 img {
                     width: 100%;
                     height: 100%;
+                    object-fit: cover;
                 }
 
                 .date {
@@ -755,6 +843,34 @@
     background-color: $dark;
     padding: 100px 0;
     position: relative;
+    &::before {
+        content: "";
+        background-image: url("../img/customer-top-bg.png");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 160px;
+        position: absolute;
+        display: inline-block;
+        top: -66px;
+        left: 0;
+        z-index: 1;
+      }
+      &::after {
+        content: "";
+        background-image: url("../img/customer-bottom-bg.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        display: inline-block;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+      }
     .title {
         h2 {
             color: $white;
@@ -854,11 +970,19 @@
 }
 // about-section
 .about-section {
-    padding: 95px 0;
+    position: relative;
+    padding: 145px 0;
+    @media only screen and (max-width: 768px) {
+        height: 100%;
+    }
     .items {
         @include align-cards();
+        justify-content: flex-start;
         .item {
             width: 40%;
+            @media only screen and (max-width: 970px) {
+                padding-left: 50px;
+            }
             @media only screen and (max-width: 768px) {
                 width: 60%;
                 text-align: center;
@@ -868,7 +992,14 @@
         }
         .img-container {
             @include center();
-            margin-top: -20px;
+            position: absolute;
+            top: -40px;
+            right: 10%;
+            z-index: 2;
+            @media only screen and (max-width: 768px) {
+                bottom: -20%;
+                right: 20%;
+            }
             img {
                 width: 280px;
                 height: 580px;
@@ -931,7 +1062,11 @@
     .copy-right {
         width: 100%;
         @include flex();
+        box-sizing: border-box;
         padding: 40px 0;
+        @media only screen and (max-width: 970px) {
+           padding: 0 20px;
+        }
         .copyright-item {
             p {
                 font-size: 14px;

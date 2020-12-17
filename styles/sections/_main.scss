@@ -12,7 +12,9 @@
         .nav-items {
             display: flex;
             align-items: center;
-
+            @media only screen and (max-width: 970px) {
+                display: none;
+            }
             .nav-item {
                 align-items: center;
                 display: flex;
@@ -358,7 +360,7 @@
         height: 100px;
         position: absolute;
         display: inline-block;
-        top: -66px;
+        top: -49px;
         left: 0;
         z-index: 1;
       }
@@ -477,19 +479,6 @@
         }
     }
 
-    .whitesplash-top {
-        position: absolute;
-        max-width: 100%;
-        left: 0;
-        top: -4%;
-    }
-
-    .whitesplash-bottom {
-        position: absolute;
-        max-width: 100%;
-        left: 0;
-        bottom: 0%;
-    }
 
 }
 
@@ -711,20 +700,6 @@
                 }
             }
         }
-    }
-
-    .top-chef {
-        position: absolute;
-        max-width: 100%;
-        left: 0;
-        top: -17%;
-    }
-
-    .bottom-chef {
-        position: absolute;
-        max-width: 100%;
-        left: 0;
-        bottom: -7%;
     }
 }
 
@@ -954,19 +929,7 @@
             }
         }
     }
-    .whitesplash-top {
-        position: absolute;
-        max-width: 100%;
-        left: 0;
-        top: -9%;
-    }
-
-    .whitesplash-bottom {
-        position: absolute;
-        max-width: 100%;
-        left: 0;
-        bottom: 0%;
-    }
+    
 }
 // about-section
 .about-section {
